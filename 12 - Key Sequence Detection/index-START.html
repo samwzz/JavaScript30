@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+  const pressed = [];
+  const secretCode = 'asdf';
+
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+
+    if (pressed.join('').includes(secretCode)) {
+      cornify_add();
+    }
+
+    if (pressed.length === secretCode.length) {
+      pressed.shift();
+    }
+  })
 </script>
 </body>
 </html>
